@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-ky-040", "id": "encoder1", "top": -276.7, "left": 76, "attrs": {} },
+    { "type": "wokwi-slide-switch", "id": "sw1", "top": 666.8, "left": 223.9, "attrs": {} },
+    { "type": "wokwi-membrane-keypad", "id": "keypad1", "top": -11.6, "left": -484, "attrs": {} },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd2",
+      "top": 428.8,
+      "left": 44,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "encoder1:DT", "uno:3", "gray", [ "h0" ] ],
+    [
+      "keypad1:C3",
+      "uno:7",
+      "green",
+      [ "v28.8", "h134.25", "v-297.6", "h0", "v-220.8", "h364.8" ]
+    ],
+    [ "keypad1:C2", "uno:8", "green", [ "v38.4", "h153.6", "v-518.4", "h345.6" ] ],
+    [ "keypad1:C1", "uno:9", "green", [ "v48", "h172.7", "v-518.4", "h326.4" ] ],
+    [ "keypad1:R4", "uno:10", "green", [ "v57.6", "h191.8", "v-518.4", "h307.2" ] ],
+    [ "keypad1:R3", "uno:11", "green", [ "v67.2", "h210.9", "v-518.4", "h297.6", "v19.2" ] ],
+    [ "keypad1:R2", "uno:12", "green", [ "v76.8", "h230", "v-518.4", "h278.4" ] ],
+    [ "keypad1:R1", "uno:13", "green", [ "v86.4", "h249.6", "v-518.4", "h259.2", "v9.6" ] ],
+    [ "uno:2", "encoder1:CLK", "green", [ "v0" ] ],
+    [ "uno:4", "encoder1:DT", "#8f4814", [ "v0" ] ],
+    [ "lcd2:GND", "uno:GND.3", "black", [ "h-19.2", "v-57.6", "h153.6" ] ],
+    [ "lcd2:VCC", "uno:5V", "red", [ "h-28.8", "v-86.3", "h144" ] ],
+    [ "lcd2:SCL", "uno:A5.2", "blue", [ "h-115.2", "v-546.9", "h9.6" ] ],
+    [ "lcd2:SDA", "uno:A4.2", "green", [ "h-105.6", "v-527.8", "h28.8" ] ],
+    [ "encoder1:VCC", "uno:5V", "red", [ "h124.8", "v461.2", "h-9.6" ] ],
+    [ "encoder1:GND", "uno:GND.2", "black", [ "h115.2", "v442.4", "h-134.4" ] ],
+    [ "sw1:3", "uno:GND.3", "black", [ "v9.6", "h163.4", "v-364.8", "h-19.2" ] ],
+    [ "sw1:2", "uno:6", "gold", [ "v19.2", "h182.5", "v-758.4", "h-134.4" ] ],
+    [ "uno:5V", "sw1:1", "red", [ "v125.3", "h272", "v412.8", "h-201.6" ] ]
+  ],
+  "dependencies": {}
+}
